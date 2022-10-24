@@ -11,3 +11,9 @@ class Project(models.Model):
 
     def __str__(self):
         return self.summary
+
+class Resume(models.Model):
+    resume = models.FileField(upload_to='resumes/')
+
+    def __str__(self):
+        return self.resume.name
