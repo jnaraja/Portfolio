@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import django_heroku
 import os
 from pathlib import Path
 
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-#7va3guj16ndmxo0z1!ekqh1_-4z*y)i!xnb=7keh6##v@y$(o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['jnaraja.herokuapp.com', 'portfolio.herokuapp.com']
 
 
 # Application definition
@@ -77,12 +78,12 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'portfoliodb',
-        'USER': 'postgres',
-        'PASSWORD': 'Yslaposa21!',
-        'HOST': 'localhost',
-        'PORT': '5431',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd4jd9f363ves3o',
+        'USER': 'iwpyawvwdenzds',
+        'PASSWORD': '25745c073fc537a4d0168e0089f7bbc4fe7c03520410f9a87365e3534a0eea74!',
+        'HOST': 'ec2-44-210-228-110.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -123,6 +124,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+django_heroku.settings(locals())
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR
